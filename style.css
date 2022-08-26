@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 0 50px 0;
+  overflow-x: hidden;
+}
+
+/*dark mode*/
+body.dark {
+  background-color: hsl(235, 21%, 11%);
+}
+
+body.dark .app .input {
+  background-color: hsl(235, 24%, 19%);
+}
+
+body.dark .app .input .unchecked {
+  border: 1.5px solid hsl(237, 14%, 26%);
+}
+
+body.dark .app .input input {
+  color: hsl(234, 11%, 52%);
+}
+
+body.dark .app .input input::placeholder {
+  color: hsl(234, 11%, 52%);
+}
+
+body.dark .app .todo-container {
+  background-color: hsl(235, 24%, 19%);
+}
+
+body.dark .app .todo-container .todo .first-todo .unchecked {
+  border: 1.5px solid hsl(237, 14%, 26%);
+}
+
+body.dark .app .first-todo {
+  color: hsl(234, 39%, 85%);
+  border-bottom: 1.5px solid hsl(237, 14%, 26%);
+}
+
+body.dark .app .todo-container .todo-footer p {
+  color: hsl(234, 11%, 52%);
+}
+
+/*  */
+
+body figure {
+  width: inherit;
+  height: 30vh;
+  position: absolute;
+  z-index: -10;
+  top: 0;
+}
+
+body figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body .footer {
+  margin-top: 50px;
+  font-weight: 700;
+  color: hsl(236, 9%, 61%);
+  font-size: 18px;
+}
+
+.app {
+  width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+/* header */
+.app .head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.app .head h1 {
+  font-weight: 700;
+  letter-spacing: 9px;
+  color: white;
+  font-size: 36px;
+}
+
+.app .head svg {
+  cursor: pointer;
+}
+
+.theme {
+  display: none;
+}
+
+/* todo input */
+.app .input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #fff;
+  gap: 25px;
+  border-radius: 5px;
+}
+
+.unchecked {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid hsl(236, 33%, 92%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.unchecked.none {
+  display: none;
+}
+
+.checked {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    145deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checked.none {
+  display: none;
+}
+
+.app .input input {
+  width: 90%;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  padding-left: 5px;
+  outline: none;
+  background-color: inherit;
+  /* color: hsl(220, 98%, 61%); */
+}
+
+.app .input input:active {
+  border: none;
+}
+
+.app .input input::placeholder {
+  display: flex;
+  align-content: center;
+}
+
+/* todo */
+.app .todo-container {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 10px 18px 1px rgb(208 208 208 / 44%);
+  background-color: #fff;
+}
+
+.app .todo {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* trial of the todo*/
+.app .first-todo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 5px 0px 0px;
+  padding: 20px 20px;
+  background-color: inherit;
+  gap: 25px;
+  color: hsl(235, 19%, 35%);
+  border-bottom: 1.5px solid hsl(236, 33%, 92%);
+}
+
+.app .first-todo .remove-btn-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+}
+
+.app .first-todo .remove-btn-parent .remove-btn {
+  display: grid;
+  place-content: center;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.app .first-todo .user-todo {
+  word-wrap: break-word;
+  width: 84%;
+}
+
+/**/
+
+.app .todo-container .todo-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: inherit;
+  border-radius: 5px;
+}
+
+.app .todo-container .todo-footer p {
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(236, 9%, 61%);
+}
+
+.app .todo-container .todo-footer p + div + p {
+  cursor: pointer;
+}
+
+.app .todo-container .todo-footer p + div + p:hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.app .todo-container .todo-footer div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.app .todo-container .todo-footer div:nth-child(1) p {
+  font-weight: 600;
+}
+
+.app .todo-container .todo-footer > p:last-child {
+  font-weight: 600;
+}
+
+/* .app .todo-container .todo-footer div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+} */ /* I commented this out because it was interfering with the {.app .todo-container .todo-footer .tab-and-above-footer-sec} in the {@media screen and (max-width: 767px)} */
+
+.app .todo-container .todo-footer div:nth-child(2) {
+  cursor: pointer;
+}
+
+.app .todo-container .todo-footer div:nth-child(2) p:nth-child(1) {
+  color: hsl(220, 98%, 61%);
+}
+
+.app .todo-container .todo-footer div:nth-child(2) p:nth-child(2):hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.app .todo-container .todo-footer div:nth-child(2) p:nth-child(3):hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.app .first-todo .remove-btn-parent .display {
+  display: none;
+}
+
+/*  */
+/*  */
+/* Responsivity */
+/*  */
+/*  */
+
+/* Large laptops and above */
+@media screen and (min-width: 1440px) {
+  .app {
+    width: 1000px;
+  }
+
+  body figure {
+    height: 40vh;
+  }
+
+  .app .mobile-footer-sec {
+    display: none;
+  }
+
+  .app .todo-container .todo-footer div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* laptops */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  body figure {
+    height: 45vh;
+  }
+
+  .app .mobile-footer-sec {
+    display: none;
+  }
+
+  .app .todo-container .todo-footer div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* Tablets and below */
+@media screen and (max-width: 1023px) {
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding-top: 15vh;
+  }
+
+  body figure {
+    height: 45vh;
+  }
+
+  .app .mobile-footer-sec {
+    display: none;
+  }
+
+  .app .todo-container .todo-footer div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* Mobile Small - Mobile Large */
+@media screen and (max-width: 767px) {
+  body {
+    padding: 60px 16px 50px 16px;
+  }
+
+  body figure {
+    height: 45vh;
+  }
+
+  body .footer {
+    font-size: 12px;
+    margin-top: 30px;
+  }
+
+  .app {
+    width: 100%;
+  }
+
+  .app .todo {
+    position: relative;
+    z-index: 1;
+  }
+
+  .app .first-todo {
+    padding: 20px 18px;
+    gap: 15px;
+  }
+
+  .app .first-todo .user-todo {
+    font-size: 14px;
+  }
+
+  .app .input input {
+    font-size: 14px;
+  }
+
+  .app .todo-container .todo-footer .tab-and-above-footer-sec {
+    display: none;
+  }
+
+  .app .mobile-footer-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    padding: 15px;
+    box-shadow: 0px 2px 29px 1px rgb(107 107 107 / 25%);
+    border-radius: 4px;
+  }
+
+  .app .mobile-footer-sec p {
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(236, 9%, 61%);
+  }
+
+  .app .mobile-footer-sec p:nth-child(1) {
+    color: hsl(220, 98%, 61%);
+  }
+
+  .app .mobile-footer-sec p:nth-child(2):hover {
+    color: hsl(235, 19%, 35%);
+  }
+
+  .app .mobile-footer-sec p:nth-child(3):hover {
+    color: hsl(235, 19%, 35%);
+  }
+}
+
+/* Large phones */
+/* what I'm trying to do is to increase the padding left and right to make it look better*/
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  body {
+    padding: 60px 46px 50px 46px;
+  }
+}
+
+/* @media screen and (min-width: 426px) and (max-width: 700px) {
+} */
