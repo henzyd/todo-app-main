@@ -4,7 +4,6 @@ import {
   darkThemeBtn,
   lightThemeBtn,
   Todo,
-  allItemsCounter,
 } from "./components/globalVariable.js";
 
 // Functions;
@@ -14,6 +13,12 @@ import lightThemeBtnHandler from "./components/lightThemeBtnHandler.js";
 import itemsCounterHandler from "./components/itemsCounter.js";
 
 itemsCounterHandler();
+
+function onloaded() {
+  Todo.removeChild(Todo.firstChild);
+}
+
+// window.addEventListener("load", onloaded);
 
 input.addEventListener("keypress", (e) => {
   if (e.key === "Enter" && input.value !== "") {
