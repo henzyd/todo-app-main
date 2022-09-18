@@ -32,4 +32,32 @@ export const bgImgDark = document.querySelector(".bg-img-dark");
 export const inputContainer = document.querySelector(".input");
 export const body = document.querySelector("body");
 
+export const notShow = document.querySelector(".not-show");
+
+export const zeroTodo = document.querySelector(".all-zero-todo");
+
+export const activeZeroTodo = document.querySelector(".active-zero-todo");
+
+export const completedZeroTodo = document.querySelector(".completed-zero-todo");
+
+export const checkIcon = document.querySelector(".check-icon");
+
+export const removeIcon = document.querySelector(".remove-icon");
+
+// Footer
 export const allItemsCounter = document.querySelector(".all-items-counter");
+
+export const footerAll = document.querySelectorAll(".footer-all");
+
+export const footerActive = document.querySelectorAll(".footer-active");
+
+export const footerCompleted = document.querySelectorAll(".footer-completed");
+
+export const clearCompleted = document.querySelector(".clear-completed");
+//
+
+export const active = document.querySelectorAll(".active");
+
+export const allTodo = document.querySelectorAll(".all-todo");
+
+export const completedTodo = document.querySelectorAll(".completed-todo");

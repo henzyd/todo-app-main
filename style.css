@@ -33,7 +33,7 @@ body.dark .app .input .unchecked {
 }
 
 body.dark .app .input input {
-  color: hsl(234, 11%, 52%);
+  color: hsl(234, 39%, 85%);
 }
 
 body.dark .app .input input::placeholder {
@@ -42,22 +42,35 @@ body.dark .app .input input::placeholder {
 
 body.dark .app .todo-container {
   background-color: hsl(235, 24%, 19%);
+  box-shadow: 0px 10px 18px 1px hsl(235deg 6% 4% / 72%);
+}
+
+body.dark .app .todo-container .todo .first-todo {
+  color: hsl(234, 39%, 85%);
+  border-bottom: 1.5px solid hsl(237, 14%, 26%);
 }
 
 body.dark .app .todo-container .todo .first-todo .unchecked {
   border: 1.5px solid hsl(237, 14%, 26%);
 }
 
-body.dark .app .first-todo {
-  color: hsl(234, 39%, 85%);
-  border-bottom: 1.5px solid hsl(237, 14%, 26%);
-}
-
 body.dark .app .todo-container .todo-footer p {
-  color: hsl(234, 11%, 52%);
+  color: hsl(234deg 11% 47%);
+  /* color: hsl(235, 24%, 19%); */
 }
 
-/*  */
+body.dark .app .todo-container .todo-footer div:nth-child(2) p:hover {
+  color: hsl(236, 33%, 92%);
+}
+
+body.dark .app .todo-container .todo-footer div:nth-child(2) + p:hover {
+  color: hsl(236, 33%, 92%);
+}
+
+body.dark .footer {
+  color: hsl(234deg 11% 47%);
+}
+/* ///////////////// */
 
 body figure {
   width: inherit;
@@ -123,13 +136,53 @@ body .footer {
   border-radius: 5px;
 }
 
-.unchecked {
+/* .col {
   width: 20px;
   height: 20px;
-  border: 1.5px solid hsl(236, 33%, 92%);
   border-radius: 50%;
   cursor: pointer;
+  background-image: linear-gradient(
+    145deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+    );
+    padding: 1.8px;
+  } */
+
+.unchecked {
+  border: 1.8px solid hsl(236, 33%, 92%);
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%;
+  height: 100%;
+  background-color: #fff; */
 }
+
+/* .unchecked:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 10px;
+  height: 10px;
+  border-radius: inherit;
+  background: linear-gradient(to right, red, orange);
+} */
+
+/* .unchecked {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+} */
 
 .unchecked.none {
   display: none;
@@ -183,13 +236,25 @@ body .footer {
   background-color: #fff;
 }
 
-.app .todo {
+.app .todo-container .todo {
   width: 100%;
   border-radius: 5px;
 }
 
 /* trial of the todo*/
-.app .first-todo {
+.not-show {
+  display: none;
+}
+
+.app .todo-container .todo .zero-todo p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: hsl(236, 9%, 61%);
+}
+
+.app .todo-container .todo .first-todo {
   width: 100%;
   display: flex;
   align-items: center;
@@ -202,14 +267,14 @@ body .footer {
   border-bottom: 1.5px solid hsl(236, 33%, 92%);
 }
 
-.app .first-todo .remove-btn-parent {
+.app .todo-container .todo .first-todo .remove-btn-parent {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 18px;
 }
 
-.app .first-todo .remove-btn-parent .remove-btn {
+.app .todo-container .todo .first-todo .remove-btn-parent .remove-btn {
   display: grid;
   place-content: center;
   width: 18px;
@@ -217,11 +282,14 @@ body .footer {
   cursor: pointer;
 }
 
-.app .first-todo .user-todo {
+.app .todo-container .todo .first-todo .user-todo {
   word-wrap: break-word;
   width: 84%;
 }
 
+.app .todo-container .todo .first-todo .remove-btn-parent .display {
+  display: none;
+}
 /**/
 
 .app .todo-container .todo-footer {
@@ -232,6 +300,14 @@ body .footer {
   padding: 15px 20px;
   background-color: inherit;
   border-radius: 5px;
+}
+
+.app .todo-container .todo-footer .clear-completed {
+  cursor: pointer;
+}
+
+.app .todo-container .todo-footer .clear-completed:hover {
+  color: hsl(235, 19%, 35%);
 }
 
 .app .todo-container .todo-footer p {
@@ -266,31 +342,19 @@ body .footer {
   display: flex;
   align-items: center;
   gap: 15px;
-} */ /* I commented this out because it was interfering with the {.app .todo-container .todo-footer .tab-and-above-footer-sec} in the {@media screen and (max-width: 767px)} */
+} */ /* I commented this out because it was interfering with the {.app .todo-container .todo-footer .tablet-and-above-footer-sec} in the {@media screen and (max-width: 767px)} */
 
 .app .todo-container .todo-footer div:nth-child(2) {
   cursor: pointer;
 }
 
-.app .todo-container .todo-footer div:nth-child(2) p:nth-child(1) {
+/* .app .todo-container .todo-footer div:nth-child(2) p:nth-child(1) {
   color: hsl(220, 98%, 61%);
-}
-
-.app .todo-container .todo-footer div:nth-child(2) p:nth-child(2):hover {
-  color: hsl(235, 19%, 35%);
-}
-
-.app .todo-container .todo-footer div:nth-child(2) p:nth-child(3):hover {
-  color: hsl(235, 19%, 35%);
-}
-
-.app .first-todo .remove-btn-parent .display {
-  display: none;
-}
-
-/* .not-show {
-  display: none;
 } */
+
+.app .todo-container .todo-footer div:nth-child(2) p:hover {
+  color: hsl(235, 19%, 35%);
+}
 
 /*  */
 /*  */
@@ -398,7 +462,7 @@ body .footer {
     font-size: 14px;
   }
 
-  .app .todo-container .todo-footer .tab-and-above-footer-sec {
+  .app .todo-container .todo-footer .tablet-and-above-footer-sec {
     display: none;
   }
 
@@ -419,15 +483,11 @@ body .footer {
     color: hsl(236, 9%, 61%);
   }
 
-  .app .mobile-footer-sec p:nth-child(1) {
+  /* .app .mobile-footer-sec p:nth-child(1) {
     color: hsl(220, 98%, 61%);
-  }
+  } */
 
-  .app .mobile-footer-sec p:nth-child(2):hover {
-    color: hsl(235, 19%, 35%);
-  }
-
-  .app .mobile-footer-sec p:nth-child(3):hover {
+  .app .mobile-footer-sec p:hover {
     color: hsl(235, 19%, 35%);
   }
 }

@@ -3,10 +3,10 @@
  */
 
 // Variable
-import { allItemsCounter, Todo } from "./globalVariable.js";
+import { allItemsCounter, notShow, Todo, zeroTodo } from "./globalVariable.js";
 
-function itemsCounterHandler() {
-  allItemsCounter.innerText = Todo.childElementCount - 1;
+export let todoArr = [];
+export let completedArr = [];
+export function itemsCounterHandler(arr1 = todoArr, arr2 = completedArr) {
+  allItemsCounter.innerText = arr1.length + arr2.length;
 }
-
-export default itemsCounterHandler;

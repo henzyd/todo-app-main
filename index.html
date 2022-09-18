@@ -80,11 +80,25 @@
       <!-- todos -->
       <div class="todo-container">
         <div class="todo">
-          <div class="first-todo">
+          <div class="first-todo all-zero-todo">
+            <p>Add a ToDo</p>
+          </div>
+          <div class="first-todo active-zero-todo">
+            <p>No Active ToDos</p>
+          </div>
+          <div class="first-todo completed-zero-todo">
+            <p>No Completed ToDos</p>
+          </div>
+          <div class="not-show">
             <div class="checking-container">
               <div class="unchecked"></div>
               <div class="checked none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="11"
+                  height="9"
+                  class="check-icon"
+                >
                   <path
                     fill="none"
                     stroke="#FFF"
@@ -103,7 +117,12 @@
 
             <div class="remove-btn-parent">
               <div class="remove-btn display">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  class="remove-icon"
+                >
                   <path
                     fill="#494C6B"
                     fill-rule="evenodd"
@@ -119,18 +138,18 @@
             <p class="all-items-counter"></p>
             <p>items left</p>
           </div>
-          <div class="tab-and-above-footer-sec">
-            <p>All</p>
-            <p>Active</p>
-            <p>Completed</p>
+          <div class="tablet-and-above-footer-sec">
+            <p class="footer-all">All</p>
+            <p class="footer-active">Active</p>
+            <p class="footer-completed">Completed</p>
           </div>
-          <p>Clear Completed</p>
+          <p class="clear-completed">Clear Completed</p>
         </div>
       </div>
       <div class="mobile-footer-sec">
-        <p>All</p>
-        <p>Active</p>
-        <p>Completed</p>
+        <p class="footer-all">All</p>
+        <p class="footer-active">Active</p>
+        <p class="footer-completed">Completed</p>
       </div>
     </div>
 
